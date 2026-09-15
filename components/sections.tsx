@@ -138,6 +138,9 @@ export function FinalCta() {
       <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist md:text-xl">
         {cta.body}
       </p>
+      <p className="mt-6 max-w-2xl text-base text-signal md:text-lg">
+        {cta.tagline}
+      </p>
       <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
         <CtaLink cta={cta.primary} tone="primary" />
         <CtaLink cta={cta.secondary} tone="secondary" />

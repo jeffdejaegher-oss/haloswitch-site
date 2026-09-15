@@ -41,10 +41,11 @@ export function Hero() {
         >
           <source src={media.heroLoop} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-void via-void/75 to-void/10 md:via-void/55 md:to-transparent" />
+        <div className="absolute inset-0 bg-void/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-transparent" />
       </div>
 
-      <div className="relative mx-auto flex min-h-svh max-w-[90rem] flex-col justify-end px-6 pb-16 pt-28 md:justify-center md:px-10 md:pb-24 md:pt-20">
+      <div className="relative mx-auto flex min-h-svh max-w-[90rem] flex-col justify-end px-6 pb-16 pt-28 md:px-10 md:pb-24 md:pt-20">
         <div className="max-w-3xl">
           <p className="text-[11px] tracking-[0.28em] text-mist uppercase">
             {hero.eyebrow}
@@ -54,6 +55,9 @@ export function Hero() {
           </h1>
           <p className="mt-8 max-w-xl text-xl text-signal md:text-2xl">
             {hero.subhead}
+          </p>
+          <p className="mt-6 max-w-2xl text-base text-signal md:text-lg">
+            {hero.tagline}
           </p>
           <p className="tabular mt-5 text-sm text-mist md:text-base">
             {hero.proof}
