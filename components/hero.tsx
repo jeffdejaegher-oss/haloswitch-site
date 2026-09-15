@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate min-h-[115svh] overflow-hidden bg-void"
+      className="relative isolate min-h-svh overflow-hidden bg-void"
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image
@@ -44,7 +44,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-void from-[16%] via-void/80 via-[38%] to-transparent to-[68%]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[115svh] max-w-[90rem] flex-col justify-end px-6 pb-16 pt-28 md:px-10 md:pb-20">
+      <div className="relative mx-auto flex min-h-svh max-w-[90rem] flex-col justify-end px-6 pb-16 pt-28 md:px-10 md:pb-20">
         <div className="max-w-3xl">
           <p className="text-[11px] tracking-[0.28em] text-mist uppercase">
             {hero.eyebrow}
