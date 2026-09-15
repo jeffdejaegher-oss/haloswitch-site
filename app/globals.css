@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-void: #0a0c0f;
+  --color-signal: #f4f5f7;
+  --color-cyan: #2ec4b6;
+  --color-graphite: #1a1d23;
+  --color-mist: #c8cdd4;
+  --color-ash: #e8eaed;
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  background: #0a0c0f;
+  color: #f4f5f7;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #0a0c0f;
+  color: #f4f5f7;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: #2ec4b6;
+  color: #0a0c0f;
+}
+
+:focus-visible {
+  outline: 1px solid #2ec4b6;
+  outline-offset: 3px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
