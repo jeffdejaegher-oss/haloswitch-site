@@ -1,9 +1,16 @@
-/** Canonical public origin. Override with NEXT_PUBLIC_SITE_ORIGIN if needed. */
-export const siteOrigin =
-  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://www.haloswitch.com";
+/** GitHub Pages project-site path for https://<owner>.github.io/haloswitch-site/ */
+export const PROJECT_PAGES_BASE_PATH = "/haloswitch-site";
 
-/** Empty at domain root. Override with NEXT_PUBLIC_BASE_PATH only for a project-path preview. */
+/** Host origin. Combined with `siteBasePath` this is the github.io project URL. */
+export const siteOrigin =
+  process.env.NEXT_PUBLIC_SITE_ORIGIN ??
+  "https://jeffdejaegher-oss.github.io";
+
+/** Empty in `next dev`. Production / Pages builds use `/haloswitch-site`. */
 export const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** Canonical / OG base for the live project Pages URL. */
+export const siteCanonicalPath = siteBasePath ? `${siteBasePath}/` : "/";
 
 export function withBasePath(path: string): string {
   if (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { siteCopy } from "@/lib/copy";
 import { media } from "@/lib/media";
-import { siteOrigin } from "@/lib/site";
+import { siteCanonicalPath, siteOrigin } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: siteCopy.seo.title,
   description: siteCopy.seo.description,
   alternates: {
-    canonical: "/",
+    canonical: siteCanonicalPath,
   },
   icons: {
     icon: media.favicon,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: siteCopy.seo.title,
     description: siteCopy.seo.description,
     type: "website",
-    url: "/",
+    url: siteCanonicalPath,
     images: [
       {
         url: media.og,

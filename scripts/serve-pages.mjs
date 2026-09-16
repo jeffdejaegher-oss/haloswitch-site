@@ -4,8 +4,10 @@ import { extname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const outDir = resolve(fileURLToPath(new URL("../out", import.meta.url)));
-const rawBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const basePath = rawBase === "/" ? "" : rawBase.replace(/\/$/, "");
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || "/haloswitch-site").replace(
+  /\/$/,
+  "",
+);
 const port = Number(process.env.PORT) || 4173;
 
 const TYPES = {
@@ -52,25 +54,19 @@ async function fileResponse(path) {
 createServer(async (req, res) => {
   const url = req.url ?? "/";
 
-  if (basePath) {
-    if (url === "/" || url === "") {
-      res.writeHead(302, { Location: `${basePath}/` });
-      res.end();
-      return;
-    }
-
-    if (url !== basePath && !url.startsWith(`${basePath}/`)) {
-      res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
-      res.end(`Not found. This export is served at ${basePath}/\n`);
-      return;
-    }
+  if (url === "/" || url === "") {
+    res.writeHead(302, { Location: `${basePath}/` });
+    res.end();
+    return;
   }
 
-  const rest = basePath
-    ? url === basePath
-      ? "/"
-      : url.slice(basePath.length)
-    : url;
+  if (url !== basePath && !url.startsWith(`${basePath}/`)) {
+    res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+    res.end(`Not found. This export is served at ${basePath}/\n`);
+    return;
+  }
+
+  const rest = url === basePath ? "/" : url.slice(basePath.length);
   const target = safeJoin(outDir, rest);
   const result = target ? await fileResponse(target) : null;
 
@@ -83,6 +79,5 @@ createServer(async (req, res) => {
   res.writeHead(200, { "content-type": result.type });
   res.end(result.body);
 }).listen(port, () => {
-  const previewPath = basePath ? `${basePath}/` : "/";
-  console.log(`Pages preview at http://127.0.0.1:${port}${previewPath}`);
+  console.log(`Pages preview at http://127.0.0.1:${port}${basePath}/`);
 });

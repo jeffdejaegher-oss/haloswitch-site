@@ -13,18 +13,16 @@ npm run preview
 
 ## GitHub Pages
 
-The production build is a static export (`output: "export"`) for the custom domain root. `next build` writes `out/` with no `basePath`. `npm run dev` and `npm run preview` both serve at `/`.
+The production build is a static export (`output: "export"`) for a github.io project site. `next build` writes `out/` with `basePath` and `assetPrefix` `/haloswitch-site`. `npm run dev` stays at `/`. `npm run preview` serves the export at `/haloswitch-site/`.
 
-Canonical origin is `https://www.haloswitch.com` (`NEXT_PUBLIC_SITE_ORIGIN`). Override `NEXT_PUBLIC_BASE_PATH` only if you need a project-path preview.
+Canonical origin is `https://jeffdejaegher-oss.github.io` (`NEXT_PUBLIC_SITE_ORIGIN`) plus `NEXT_PUBLIC_BASE_PATH` `/haloswitch-site` — the live URL is `https://jeffdejaegher-oss.github.io/haloswitch-site/`. This repo does not assume `www.haloswitch.com`.
 
 **Enable Pages (once):** Settings → Pages → Source: GitHub Actions.
 
-**Expected URL** after Jeff adds the Pages custom domain in Settings:
+**Expected URL** after the site is public-to-collaborators:
 
-`https://www.haloswitch.com/`
+`https://jeffdejaegher-oss.github.io/haloswitch-site/`
 
-This repo does not attach the domain or change DNS. Until the custom domain is added, the old github.io project path will not match a root export (asset URLs are `/…`, not `/haloswitch-site/…`). GitHub Pages redirects `*.github.io/<repo>/` to the custom domain after it is attached.
-
-Private Pages visibility needs GitHub Pro or Team; people with repo read access can open it.
+Private Pages visibility needs GitHub Pro or Team; people with repo read access can open it. No custom domain. No DNS.
 
 Agents must not merge to `main`. Pull requests only upload a `pages-preview` artifact — they do not publish the live site.
