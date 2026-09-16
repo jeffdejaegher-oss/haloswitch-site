@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { PROJECT_PAGES_BASE_PATH } from "./lib/site";
 
 function normalizeBasePath(value: string): string {
   if (!value || value === "/") {
@@ -14,12 +13,7 @@ function resolveBasePath(): string {
     return normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH);
   }
 
-  // `next dev` stays at `/`. Production builds match the GitHub Pages project URL.
-  if (process.env.NODE_ENV === "development") {
-    return "";
-  }
-
-  return PROJECT_PAGES_BASE_PATH;
+  return "";
 }
 
 const basePath = resolveBasePath();
