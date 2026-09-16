@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     title: siteCopy.seo.title,
     description: siteCopy.seo.description,
     type: "website",
+    images: [
+      {
+        url: media.og,
+        width: 1200,
+        height: 630,
+        alt: siteCopy.seo.title,
+      },
+    ],
   },
 };
 
