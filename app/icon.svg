@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Halo Switch mark">
+  <style>
+    .halo { stroke: #0A0C0F; }
+    @media (prefers-color-scheme: dark) {
+      .halo { stroke: #F4F5F7; }
+    }
+  </style>
+  <ellipse class="halo" cx="16" cy="14" rx="10" ry="4.2" fill="none" stroke-width="1.75"/>
+  <rect x="14" y="23" width="4" height="2" rx="0.4" fill="#2EC4B6"/>
+</svg>
