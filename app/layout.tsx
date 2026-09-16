@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: siteCopy.seo.title,
   description: siteCopy.seo.description,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: media.favicon,
   },
@@ -21,6 +24,7 @@ export const metadata: Metadata = {
     title: siteCopy.seo.title,
     description: siteCopy.seo.description,
     type: "website",
+    url: "/",
     images: [
       {
         url: media.og,

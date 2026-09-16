@@ -13,21 +13,18 @@ npm run preview
 
 ## GitHub Pages
 
-The production build is a static export (`output: "export"`) for a github.io project site. `next build` writes `out/` with `basePath` `/haloswitch-site`. `npm run dev` stays at `/`. `npm run preview` serves the export at `/haloswitch-site/`.
+The production build is a static export (`output: "export"`) for the custom domain root. `next build` writes `out/` with no `basePath`. `npm run dev` and `npm run preview` both serve at `/`.
+
+Canonical origin is `https://www.haloswitch.com` (`NEXT_PUBLIC_SITE_ORIGIN`). Override `NEXT_PUBLIC_BASE_PATH` only if you need a project-path preview.
 
 **Enable Pages (once):** Settings → Pages → Source: GitHub Actions.
 
-**Expected URL** after the site is public-to-collaborators:
+**Expected URL** after Jeff adds the Pages custom domain in Settings:
 
-`https://jeffdejaegher-oss.github.io/haloswitch-site/`
+`https://www.haloswitch.com/`
 
-Private Pages visibility needs GitHub Pro or Team; people with repo read access can open it. No custom domain.
+This repo does not attach the domain or change DNS. Until the custom domain is added, the old github.io project path will not match a root export (asset URLs are `/…`, not `/haloswitch-site/…`). GitHub Pages redirects `*.github.io/<repo>/` to the custom domain after it is attached.
 
-**Merge order**
-
-1. Merge PR #1 (landing) to `main`
-2. Retarget and merge PR #2 (space-frame media)
-3. Retarget and merge the Pages workflow PR
-4. The next push to `main` deploys Pages
+Private Pages visibility needs GitHub Pro or Team; people with repo read access can open it.
 
 Agents must not merge to `main`. Pull requests only upload a `pages-preview` artifact — they do not publish the live site.
