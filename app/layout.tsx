@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { siteCopy } from "@/lib/copy";
 import { media } from "@/lib/media";
+import { siteOrigin } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteOrigin),
   title: siteCopy.seo.title,
   description: siteCopy.seo.description,
   icons: {
