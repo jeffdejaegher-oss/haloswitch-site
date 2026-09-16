@@ -1,10 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Halo Switch mark">
-  <style>
-    .halo { stroke: #0A0C0F; }
-    @media (prefers-color-scheme: dark) {
-      .halo { stroke: #F4F5F7; }
-    }
-  </style>
-  <ellipse class="halo" cx="16" cy="14" rx="10" ry="4.2" fill="none" stroke-width="1.75"/>
-  <rect x="14" y="23" width="4" height="2" rx="0.4" fill="#2EC4B6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Halo Switch mark">
+  <title>Halo Switch arc mark</title>
+  <rect width="256" height="256" fill="#0A0C0F"/>
+  <circle cx="128" cy="128" r="78" fill="none" stroke="#2EC4B6" stroke-width="3" opacity="0.7"/>
+  <path d="M128 50 A78 78 0 0 1 206 128" fill="none" stroke="#2EC4B6" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="128" cy="128" r="10" fill="#2EC4B6"/>
 </svg>
