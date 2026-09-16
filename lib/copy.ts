@@ -25,6 +25,8 @@ export const siteCopy = {
     eyebrow: "Microsoft 365 Business Premium",
     headline: "We flip the switch.",
     subhead: "You buy the licenses. We turn them on.",
+    tagline:
+      "HaloSwitch is what you thought you were getting when you bought Microsoft 365.",
     proof: "24 hours. $8,000–$11,000 per tenant. New or current.",
     primary: {
       label: "Start a tenant turn-on",
@@ -94,6 +96,8 @@ export const siteCopy = {
     id: "cta",
     headline: "Ready to flip the switch?",
     body: "You buy Microsoft 365 Business Premium. Halo Switch turns it on in 24 hours.",
+    tagline:
+      "HaloSwitch is what you thought you were getting when you bought Microsoft 365.",
     primary: {
       label: "Start a tenant turn-on",
       href: mailto("Start a tenant turn-on"),
