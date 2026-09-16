@@ -7,11 +7,13 @@ import {
   TracksSection,
 } from "@/components/sections";
 import { SiteBar } from "@/components/site-bar";
+import { Splash } from "@/components/splash";
 import { siteCopy } from "@/lib/copy";
 
 export default function Home() {
   return (
     <>
+      <Splash />
       <SiteBar />
       <main>
         <Hero />

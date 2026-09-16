@@ -20,6 +20,10 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  .splash-overlay {
+    display: none !important;
+  }
 }
 
 body {
