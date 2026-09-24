@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="HALOSWITCH">
-  <title>HALOSWITCH wordmark</title>
-  <rect width="1200" height="320" fill="#0A0C0F"/>
-  <circle cx="600" cy="160" r="118" fill="none" stroke="#2EC4B6" stroke-width="2.5" opacity="0.85"/>
-  <path d="M600 42 A118 118 0 0 1 718 160" fill="none" stroke="#2EC4B6" stroke-width="6" stroke-linecap="round"/>
-  <text x="600" y="178" text-anchor="middle" fill="#2EC4B6"
-        font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
-        font-size="72" font-weight="600" letter-spacing="0.22em">HALOSWITCH</text>
-</svg>

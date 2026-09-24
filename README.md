@@ -1,28 +1,27 @@
-# Halo Switch
+# haloswitch-site (unpublished)
 
-Single-page marketing site for Halo Switch. Next.js App Router and Tailwind.
+This public repository used to serve the old Halo Switch marketing site at
+`https://jeffdejaegher-oss.github.io/haloswitch-site/`.
 
-Copy lives in `lib/copy.ts`. Media lives in `public/media`.
+Metis2 replaced that site. Marketing HTML, Next.js export source, and assets
+were removed so GitHub Pages no longer publishes that copy.
 
-```bash
-npm run dev
-npm run build
-npm run lint
-npm run preview
-```
+## GitHub Pages setting (needs a repo admin)
 
-## GitHub Pages
+The Pages REST API (`DELETE /repos/jeffdejaegher-oss/haloswitch-site/pages`)
+returns **403 Resource not accessible by integration** for the Cursor GitHub
+App token. Same for `PUT` Pages settings and disabling Actions workflows.
 
-The production build is a static export (`output: "export"`) for a github.io project site. `next build` writes `out/` with `basePath` and `assetPrefix` `/haloswitch-site`. `npm run dev` stays at `/`. `npm run preview` serves the export at `/haloswitch-site/`.
+A repo **admin** should finish the takedown:
 
-Canonical origin is `https://jeffdejaegher-oss.github.io` (`NEXT_PUBLIC_SITE_ORIGIN`) plus `NEXT_PUBLIC_BASE_PATH` `/haloswitch-site` — the live URL is `https://jeffdejaegher-oss.github.io/haloswitch-site/`. This repo does not assume `www.haloswitch.com`.
+1. Open https://github.com/jeffdejaegher-oss/haloswitch-site/settings/pages
+2. Turn GitHub Pages **off** (Unpublish / Remove site)
+3. Do not re-enable Pages for this repo
 
-**Enable Pages (once):** Settings → Pages → Source: GitHub Actions.
+This repo previously published via a custom Actions workflow
+(`.github/workflows/deploy-pages.yml`) that built a Next.js static export.
+That workflow and the marketing source were removed. A one-shot empty Pages
+deploy replaces the last marketing artifact so the live URL does not keep
+serving the old home until Unpublish takes effect.
 
-**Expected URL** after the site is public-to-collaborators:
-
-`https://jeffdejaegher-oss.github.io/haloswitch-site/`
-
-Private Pages visibility needs GitHub Pro or Team; people with repo read access can open it. No custom domain. No DNS.
-
-Agents must not merge to `main`. Pull requests only upload a `pages-preview` artifact — they do not publish the live site.
+Do not delete or archive this repository unless Pages-off still fails.
