@@ -18,10 +18,10 @@ A repo **admin** should finish the takedown:
 2. Turn GitHub Pages **off** (Unpublish / Remove site)
 3. Do not re-enable Pages for this repo
 
-This repo previously published via a custom Actions workflow
-(`.github/workflows/deploy-pages.yml`) that built a Next.js static export.
-That workflow and the marketing source were removed. A one-shot empty Pages
-deploy replaces the last marketing artifact so the live URL does not keep
-serving the old home until Unpublish takes effect.
+There is no custom workflow under `.github/workflows`. The previous
+`Deploy GitHub Pages` workflow published a Next.js static export; it was
+removed after an empty artifact replaced the marketing home. GitHub’s
+built-in `pages-build-deployment` may still exist until Pages is
+unpublished. It cannot be disabled without admin.
 
 Do not delete or archive this repository unless Pages-off still fails.
